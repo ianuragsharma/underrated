@@ -25,15 +25,17 @@ const HomePage = () => {
       </div>
       <section className="hero-banner">
         <div className="text-center">
-          <div class="loader flex-row">
-            {[...Array(35)].map(() => (
-              <span class="stroke"></span>
-            ))}
+          <div className="loader-container  ">
+            <div class="loader flex-row">
+              {[...Array(40)].map(() => (
+                <span class="stroke"></span>
+              ))}
+            </div>
           </div>
           <h3 className="text-black  hero-heading fw-300">
             Discover the most underrated beats
           </h3>
-          <button className="btn  btn-outlined-secondary explore-btn text-white  mt-3">
+          <button className="btn  btn-outlined-secondary explore-btn text-white  my-5">
             <Link to="/explore">Explore </Link>
           </button>
         </div>
