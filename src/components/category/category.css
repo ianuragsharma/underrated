@@ -1,0 +1,18 @@
+.category-item {
+  margin-top: 1rem;
+  position: relative;
+  width: 20rem;
+}
+
+.category-img {
+  opacity: 0.8;
+  border-radius: 10px;
+}
+@media screen and (max-width: 32em) {
+  .category-item {
+    max-width: 10rem;
+  }
+  .cateogy-title {
+    font-size: 1rem;
+  }
+}
