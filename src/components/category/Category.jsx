@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./category.css";
-import { Link } from "react-router-dom";
+import { useVideo } from "../../context";
 const Category = () => {
-  const [cateogory, setCateogory] = useState([]);
+  const {
+    videoState: { categories },
+  } = useVideo();
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await axios.get("api/categories");
-        setCateogory(data.categories);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
-  const cateogoryList = cateogory.map((item) => (
+  const cateogoryList = categories.map((item) => (
     <div key={item._id} className="category-item">
       <img
         loading="lazy"

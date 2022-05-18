@@ -1,4 +1,5 @@
 .hero-banner {
+  margin-top: 4.5rem;
   min-height: 65vh;
   width: 100%;
   background: linear-gradient(to right, #fdb99b, #cf8bf3, #a770ef);
@@ -88,11 +89,15 @@
 }
 /* navbar  */
 .nav-container {
+  position: fixed;
+  top: 0;
+  z-index: 1;
   background-color: var(--solid-white);
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 4.5rem;
+  border-bottom: 1px solid var(--dim-grey);
 }
 
 @media screen and (max-width: 32em) {

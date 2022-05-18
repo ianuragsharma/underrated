@@ -14,7 +14,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "Indie India",
+    categoryName: "Indie Songs",
     imgURL:
       "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/videoLibrary/categoryIMG/indie.png",
   },

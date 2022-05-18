@@ -1,0 +1,11 @@
+.chips-btn {
+  border-radius: 5px 25px 25px 5px;
+  border: 1px solid var(--dim-grey);
+  padding: 6px 12px;
+}
+.chips-btn:hover {
+  background-color: var(--dim-grey);
+}
+.active-chip {
+  background-color: var(--dim-grey);
+}

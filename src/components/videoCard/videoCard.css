@@ -1,0 +1,32 @@
+.videoCard-container {
+  max-width: 22rem;
+  border-radius: 6px;
+}
+.videoImg-container {
+  border-radius: 10px;
+  position: relative;
+}
+.video-img {
+  border-radius: 6px;
+}
+.videoImg-container .avatar {
+  position: absolute;
+  bottom: 0px;
+  left: 8px;
+  bottom: 1rem;
+}
+.videoImg-container .video-runtime {
+  background-color: var(--solid-black);
+  position: absolute;
+  right: 8px;
+  bottom: 1rem;
+}
+.video-uplodaded {
+  margin-left: auto;
+}
+.video-alt {
+  color: #7a7a7a;
+}
+.video-title {
+  margin: 4px 0;
+}

@@ -1,0 +1,13 @@
+.continer {
+  margin: 5rem 2rem 0rem 16rem;
+  height: 100vh;
+}
+.videos-container {
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+@media only screen and (max-width: 756px) {
+  .continer {
+    margin-left: 2rem;
+  }
+}
