@@ -1,11 +1,12 @@
 import React, { useState, useLayoutEffect } from "react";
 import { FaBars } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { sidebarData } from "./sidebarData";
 import "./navbar.css";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(true);
+  // sets the inital state of sidebar based on window width.
   useLayoutEffect(() => {
     function updateSize() {
       window.innerWidth > 756 ? setSidebar(true) : setSidebar(false);
@@ -15,6 +16,9 @@ function Navbar() {
     return () => window.removeEventListener("resize", updateSize);
   }, []);
   const showSidebar = () => setSidebar(!sidebar);
+  const getActiveStyle = ({ isActive }) => ({
+    backgroundColor: isActive ? "var(--dim-grey)" : "",
+  });
 
   return (
     <>
@@ -48,12 +52,16 @@ function Navbar() {
             {sidebarData.map((item, index) => {
               return (
                 <li key={index} className="nav-text mt-1">
-                  <Link className="nav-text-link mx-2 text-xl" to={item.path}>
+                  <NavLink
+                    style={getActiveStyle}
+                    className="nav-text-link mx-2 text-xl"
+                    to={item.path}
+                  >
                     <div className="icon-container flex-row">
                       {item.icon}
                       <span className="ml-4">{item.title}</span>
                     </div>
-                  </Link>
+                  </NavLink>
                 </li>
               );
             })}

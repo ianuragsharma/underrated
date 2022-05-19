@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
+import { videoReducer } from "../reducers";
 const initialState = {
   videos: [],
   categories: [],
@@ -8,18 +9,6 @@ const initialState = {
 
 const VideoContext = createContext();
 const VideoProvider = ({ children }) => {
-  const videoReducer = (videoState, { type, payload }) => {
-    switch (type) {
-      case "SET_VIDEOS":
-        return { ...videoState, videos: payload };
-
-      case "SET_CATEGORIES":
-        return { ...videoState, categories: payload };
-
-      default:
-        throw new Error("Action type not found");
-    }
-  };
   const [videoState, videoDispatch] = useReducer(videoReducer, initialState);
   useEffect(
     () =>

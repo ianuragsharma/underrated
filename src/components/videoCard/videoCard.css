@@ -25,7 +25,7 @@
   margin-left: auto;
 }
 .video-alt {
-  color: #7a7a7a;
+  color: var(--light-grey);
 }
 .video-title {
   margin: 4px 0;
