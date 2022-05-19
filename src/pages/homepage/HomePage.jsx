@@ -4,31 +4,30 @@ import { Category } from "../../components";
 const HomePage = () => {
   return (
     <div>
-      <div className="mx-7">
-        <nav className="nav-container flex-row ">
-          <Link to="/">
-            <h4 className="fw-500 m-4">Underrated</h4>
-          </Link>
+      <nav className="nav-container flex-row ">
+        <Link to="/">
+          <h4 className="fw-500 text-xl m-4">Underrated</h4>
+        </Link>
 
-          <Link className="text-xl ml-2  fw-300" to="./explore">
-            Explore
-          </Link>
+        <Link className="text-xl ml-2  fw-300" to="./explore">
+          Explore
+        </Link>
 
-          <ul className="flex-row">
-            <li>
-              <Link to="/login">
-                <i className="fa-solid fa-user"></i>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        <ul className="flex-row">
+          <li>
+            <Link to="/login">
+              <i className="fa-solid fa-user"></i>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
       <section className="hero-banner">
         <div className="text-center">
           <div className="loader-container  ">
-            <div class="loader flex-row">
-              {[...Array(40)].map(() => (
-                <span class="stroke"></span>
+            <div className="loader flex-row">
+              {[...Array(40)].map((item, idx) => (
+                <span key={idx} className="stroke"></span>
               ))}
             </div>
           </div>
