@@ -1,5 +1,7 @@
 :root {
   --light-grey: #7a7a7a;
+  --dark-zinc: #3f3f46;
+  --light-zinc: #f4f4f5;
 }
 * {
   box-sizing: border-box;
