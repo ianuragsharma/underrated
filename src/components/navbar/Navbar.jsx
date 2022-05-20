@@ -3,9 +3,11 @@ import { FaBars } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { sidebarData } from "./sidebarData";
 import "./navbar.css";
+import { useAuth } from "../../context";
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(true);
+  const { user } = useAuth();
   // sets the inital state of sidebar based on window width.
   useLayoutEffect(() => {
     function updateSize() {
@@ -30,11 +32,19 @@ function Navbar() {
           <h4 className="fw-500 text-xl ml-2">Underrated</h4>
         </Link>
         <ul className="flex-row">
-          <li>
-            <Link to="/login" className="mr-5">
-              <i className="fa-solid fa-user "></i>
-            </Link>
-          </li>
+          {user ? (
+            <li>
+              <Link to="/profile" className="mr-5" title="Profile">
+                <i className="fa-solid fa-user "></i>
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login" className="mr-5" title="Login">
+                <i className="fa-solid fa-user "></i>
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
 
