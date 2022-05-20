@@ -1,2 +1,9 @@
 export { HomePage } from "./homepage/HomePage";
 export { ExplorePage } from "./explore/ExplorePage";
+export { LoginPage } from "./authentication/LoginPage";
+export { SignupPage } from "./authentication/SignupPage";
+export { WatchLaterPage } from "./watchLater/WatchLaterPage";
+export { PlaylistPage } from "./playlist/PlaylistPage";
+export { LikedVideosPage } from "./likedVideos/LikedVideosPage";
+export { HistoryPage } from "./history/HistoryPage";
+export { ProfilePage } from "./profile/ProfilePage";
