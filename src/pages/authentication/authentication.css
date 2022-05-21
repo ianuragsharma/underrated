@@ -1,0 +1,35 @@
+.auth-container {
+  border-radius: 10px;
+  max-width: 30rem;
+  margin: 8rem auto;
+  padding: 2.5rem 2rem;
+  box-shadow: inset 0 3px 6px rgba(154, 147, 147, 0.16),
+    0 4px 6px rgba(171, 167, 167, 0.45);
+}
+
+.user-details > * {
+  margin: 0.5rem;
+}
+.login-preference {
+  margin-left: auto;
+}
+.user-details a:hover {
+  text-decoration: underline;
+}
+.input-area {
+  height: 2rem;
+}
+.input-area:focus {
+  border: 1px solid var(--dim-grey);
+  height: 2rem;
+}
+.btn-solid-primary {
+  background-color: var(--solid-black);
+  border-radius: 8px;
+}
+.btn-solid-primary:hover {
+  background-color: var(--dark-zinc);
+}
+.btn-outlined-secondary {
+  border-radius: 8px;
+}

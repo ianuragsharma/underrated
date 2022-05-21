@@ -1,7 +1,9 @@
 import "./homepage.css";
 import { Link } from "react-router-dom";
 import { Category } from "../../components";
+import { useAuth } from "../../context";
 const HomePage = () => {
+  const { user } = useAuth();
   return (
     <div>
       <nav className="nav-container flex-row ">
@@ -14,11 +16,19 @@ const HomePage = () => {
         </Link>
 
         <ul className="flex-row">
-          <li>
-            <Link to="/login">
-              <i className="fa-solid fa-user"></i>
-            </Link>
-          </li>
+          {user ? (
+            <li>
+              <Link to="/profile" className="mr-5" title="Profile">
+                <i className="fa-solid fa-user "></i>
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login" className="mr-5" title="Login">
+                <i className="fa-solid fa-user "></i>
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
 

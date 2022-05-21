@@ -16,17 +16,17 @@ export const sidebarData = [
   },
   {
     title: "Playlist",
-    path: "/playlist",
+    path: "/playlists",
     icon: <RiPlayListLine />,
   },
   {
     title: "Watch later",
-    path: "/watch-later",
+    path: "/watchlater",
     icon: <BiTimeFive />,
   },
   {
     title: "Liked Videos",
-    path: "/liked-videos",
+    path: "/likedvideos",
     icon: <AiOutlineLike />,
   },
   {
