@@ -4,7 +4,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import { IconContext } from "react-icons";
-import { AuthContextProvider, VideoProvider } from "./context";
+import { AuthProvider, VideoProvider } from "./context";
 
 // Call make Server
 makeServer();
@@ -12,13 +12,13 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthContextProvider>
+      <AuthProvider>
         <VideoProvider>
           <IconContext.Provider value={{ color: "black" }}>
             <App />
           </IconContext.Provider>
         </VideoProvider>
-      </AuthContextProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
