@@ -4,6 +4,9 @@ import { videoReducer } from "../reducers";
 const initialState = {
   videos: [],
   categories: [],
+  liked: [],
+  watchLater: [],
+  history: [],
   selectedCategory: "All",
 };
 
