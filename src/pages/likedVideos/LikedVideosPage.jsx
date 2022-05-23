@@ -1,5 +1,4 @@
-import { Navbar } from "../../components";
-import ActionVideoCard from "../../components/actionVideoCard/ActionVideoCard";
+import { ActionVideoCard, Navbar } from "../../components";
 import { useVideo } from "../../context";
 
 const LikedVideosPage = () => {

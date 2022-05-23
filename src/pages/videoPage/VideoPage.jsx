@@ -10,8 +10,7 @@ import {
   removeFromLikedService,
 } from "../../services/likeServices";
 import { useToast } from "../../hooks";
-import { isAlreadyInLiked } from "../../utils/isAlreadyInLiked";
-import { isAlreadyInWatchLater } from "../../utils";
+import { isAlreadyIn } from "../../utils";
 import {
   addToWatchLaterService,
   removeFromWatchLaterService,
@@ -28,8 +27,10 @@ const VideoPage = () => {
   )[0];
   const { title, description, creator, views, dateUploaded, avatar } =
     currentVideo;
-  const isLiked = isAlreadyInLiked(_id, liked);
-  const isInWatchlater = isAlreadyInWatchLater(_id, watchLater);
+
+  const isLiked = isAlreadyIn(liked)(_id);
+  const isInWatchlater = isAlreadyIn(watchLater)(_id);
+
   const likeHandler = () => {
     if (user) {
       isLiked

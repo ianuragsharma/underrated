@@ -1,6 +1,5 @@
 import { useToast } from "../../hooks";
-import { Navbar } from "../../components";
-import ActionVideoCard from "../../components/actionVideoCard/ActionVideoCard";
+import { ActionVideoCard, Navbar } from "../../components";
 import { useAuth, useVideo } from "../../context";
 import "./history.css";
 import { clearHistoryService } from "../../services/historyServices";
