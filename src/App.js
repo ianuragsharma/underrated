@@ -9,6 +9,7 @@ import {
   PlaylistPage,
   ProfilePage,
   SignupPage,
+  VideoPage,
   WatchLaterPage,
 } from "./pages";
 import { Toast } from "./components";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/explore" exact element={<ExplorePage />} />
         <Route path="/login" exact element={<LoginPage />} />
         <Route path="/signup" exact element={<SignupPage />} />
+        <Route path="/watch/:_id" element={<VideoPage />} />
         <Route
           path="/playlists"
           element={

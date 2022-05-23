@@ -1,0 +1,7 @@
+.video-action-container {
+  justify-content: space-around;
+  font-size: 1.5rem;
+}
+.video-action-container > * {
+  cursor: pointer;
+}

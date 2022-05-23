@@ -1,0 +1,24 @@
+.video-iframe {
+  width: 100%;
+  height: 69%;
+  border-radius: 10px;
+}
+.video-title-links {
+  align-items: center;
+}
+.video-action {
+  font-size: 1.5rem;
+  margin-left: auto;
+}
+.video-action > * {
+  margin: 0 10px;
+  cursor: pointer;
+}
+.video-divider {
+  width: 100%;
+  border-bottom: 1px solid var(--dim-grey);
+  margin: 1.5rem 0;
+}
+.video-discription {
+  color: var(--solid-black);
+}

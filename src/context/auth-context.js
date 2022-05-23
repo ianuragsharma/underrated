@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const AuthContext = createContext();
 const useAuth = () => useContext(AuthContext);
 
-const AuthContextProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [encodedToken, setEncodedToken] = useState(null);
   return (
@@ -15,4 +15,4 @@ const AuthContextProvider = ({ children }) => {
   );
 };
 
-export { AuthContextProvider, useAuth };
+export { AuthProvider, useAuth };
