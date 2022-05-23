@@ -1,9 +1,9 @@
 import "./videoCard.css";
 import { AiOutlineFire } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { isAlreadyInHistory } from "../../utils/isAlreadyInHistory";
 import { useAuth, useVideo } from "../../context";
 import { addToHistoryService } from "../../services/historyServices";
+import { isAlreadyIn } from "../../utils";
 const VideoCard = ({ video }) => {
   const {
     _id,
@@ -28,11 +28,13 @@ const VideoCard = ({ video }) => {
   const { videoState, videoDispatch } = useVideo();
   const { encodedToken } = useAuth();
   const { history } = videoState;
+  const isInHistory = isAlreadyIn(history)(_id);
   const historyHandler = () => {
-    if (!isAlreadyInHistory(_id, history)) {
+    if (!isInHistory) {
       addToHistoryService(videoDispatch, video, encodedToken);
     }
   };
+
   return (
     <div className="videoCard-container ">
       <Link to={`/watch/${_id}`} onClick={historyHandler}>

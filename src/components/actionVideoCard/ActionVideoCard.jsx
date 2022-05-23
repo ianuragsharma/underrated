@@ -3,16 +3,14 @@ import React from "react";
 import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { BiTimeFive, BiHistory } from "react-icons/bi";
 import { MdOutlineWatchLater, MdWatchLater } from "react-icons/md";
-
 import { RiPlayListLine, RiChatHistoryFill } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth, useVideo } from "../../context";
-import { isAlreadyInHistory } from "../../utils/isAlreadyInHistory";
 import {
   addToHistoryService,
   removeFromHistoryService,
 } from "../../services/historyServices";
-import { isAlreadyInLiked, isAlreadyInWatchLater } from "../../utils";
+import { isAlreadyIn } from "../../utils";
 import {
   addToWatchLaterService,
   removeFromWatchLaterService,
@@ -49,14 +47,14 @@ const ActionVideoCard = ({ video }) => {
   const { showToast } = useToast();
   const navigate = useNavigate();
   const { liked, watchLater, history } = videoState;
-  const isLiked = isAlreadyInLiked(_id, liked);
-  const isInWatchlater = isAlreadyInWatchLater(_id, watchLater);
-  const isInHistory = isAlreadyInHistory(_id, history);
+
+  const isLiked = isAlreadyIn(liked)(_id);
+  const isInWatchlater = isAlreadyIn(watchLater)(_id);
+  const isInHistory = isAlreadyIn(history)(_id);
+
   const historyHandler = () => {
     if (!isInHistory) {
       addToHistoryService(videoDispatch, video, encodedToken);
-    } else {
-      removeFromHistoryService(videoDispatch, _id, encodedToken, showToast);
     }
   };
   const likeHandler = () => {
@@ -68,6 +66,9 @@ const ActionVideoCard = ({ video }) => {
     isInWatchlater
       ? removeFromWatchLaterService(videoDispatch, _id, encodedToken, showToast)
       : addToWatchLaterService(videoDispatch, video, encodedToken, showToast);
+  };
+  const removeFromHistoryHandler = () => {
+    removeFromHistoryService(videoDispatch, _id, encodedToken, showToast);
   };
   return (
     <div className="videoCard-container ">
@@ -84,7 +85,7 @@ const ActionVideoCard = ({ video }) => {
       </Link>
       <div className="video-action-container flex-row  mt-3">
         {isInHistory ? (
-          <RiChatHistoryFill onClick={historyHandler} />
+          <RiChatHistoryFill onClick={removeFromHistoryHandler} />
         ) : (
           <BiHistory title="History" onClick={historyHandler} />
         )}
@@ -112,4 +113,4 @@ const ActionVideoCard = ({ video }) => {
   );
 };
 
-export default ActionVideoCard;
+export { ActionVideoCard };
