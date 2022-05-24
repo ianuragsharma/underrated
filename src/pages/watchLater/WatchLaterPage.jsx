@@ -7,7 +7,6 @@ const WatchLaterPage = () => {
   const watchLaterList = watchLater.map((video) => (
     <ActionVideoCard video={video} />
   ));
-
   return (
     <div>
       <Navbar />

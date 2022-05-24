@@ -9,6 +9,7 @@ import {
   PlaylistPage,
   ProfilePage,
   SignupPage,
+  SinglePlaylistPage,
   VideoPage,
   WatchLaterPage,
 } from "./pages";
@@ -61,6 +62,14 @@ function App() {
           element={
             <RequiresAuth>
               <ProfilePage />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/playlist/:playListId"
+          element={
+            <RequiresAuth>
+              <SinglePlaylistPage />
             </RequiresAuth>
           }
         />

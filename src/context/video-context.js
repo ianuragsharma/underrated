@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import axios from "axios";
 import { videoReducer } from "../reducers";
 const initialState = {
@@ -7,12 +13,15 @@ const initialState = {
   liked: [],
   watchLater: [],
   history: [],
+  playlists: [],
   selectedCategory: "All",
 };
 
 const VideoContext = createContext();
 const VideoProvider = ({ children }) => {
   const [videoState, videoDispatch] = useReducer(videoReducer, initialState);
+  const [playlistModal, setPlaylistModal] = useState(false);
+  const toggleModal = () => setPlaylistModal((prevState) => !prevState);
   useEffect(
     () =>
       (async () => {
@@ -42,6 +51,8 @@ const VideoProvider = ({ children }) => {
       value={{
         videoState,
         videoDispatch,
+        playlistModal,
+        toggleModal,
       }}
     >
       {children}
