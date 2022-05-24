@@ -68,7 +68,7 @@ const VideoPage = () => {
   const playlistHandler = () => {
     if (user) toggleModal();
     else {
-      showToast("error", "Login to add the video to your Watch later videos.");
+      showToast("error", "Login to add the video to your Playlist.");
       navigate("/login");
     }
   };
