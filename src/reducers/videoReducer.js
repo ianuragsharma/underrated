@@ -11,6 +11,8 @@ const videoReducer = (videoState, { type, payload }) => {
       return { ...videoState, liked: [...payload] };
     case "UPDATE_WATCH_LATER":
       return { ...videoState, watchLater: [...payload] };
+    case "SET_SELECTED_CATEGORY":
+      return { ...videoState, selectedCategory: payload };
     case "UPDATE_PLAYLISTS":
       return {
         ...videoState,

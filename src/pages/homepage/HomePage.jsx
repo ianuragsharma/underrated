@@ -1,9 +1,10 @@
 import "./homepage.css";
 import { Link } from "react-router-dom";
 import { Category } from "../../components";
-import { useAuth } from "../../context";
+import { useAuth, useVideo } from "../../context";
 const HomePage = () => {
   const { user } = useAuth();
+  const { videoState, videoDispatch } = useVideo();
   return (
     <div>
       <nav className="nav-container flex-row ">
@@ -11,7 +12,16 @@ const HomePage = () => {
           <h4 className="fw-500 text-xl m-4">Underrated</h4>
         </Link>
 
-        <Link className="text-xl ml-2  fw-300" to="./explore">
+        <Link
+          className="text-xl ml-2  fw-300"
+          to="./explore"
+          onClick={() =>
+            videoDispatch({
+              type: "SET_SELECTED_CATEGORY",
+              payload: "All",
+            })
+          }
+        >
           Explore
         </Link>
 
@@ -45,7 +55,17 @@ const HomePage = () => {
             Discover the most underrated beats
           </h3>
           <button className="btn  btn-outlined-secondary explore-btn text-white  my-5">
-            <Link to="/explore">Explore </Link>
+            <Link
+              to="/explore"
+              onClick={() =>
+                videoDispatch({
+                  type: "SET_SELECTED_CATEGORY",
+                  payload: "All",
+                })
+              }
+            >
+              Explore{" "}
+            </Link>
           </button>
         </div>
       </section>
