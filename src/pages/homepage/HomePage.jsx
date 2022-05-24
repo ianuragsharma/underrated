@@ -46,7 +46,7 @@ const HomePage = () => {
         <div className="text-center">
           <div className="loader-container  ">
             <div className="loader flex-row">
-              {[...Array(40)].map((item, idx) => (
+              {[...Array(80)].map((item, idx) => (
                 <span key={idx} className="stroke"></span>
               ))}
             </div>
