@@ -10,13 +10,11 @@
   position: fixed;
   top: 0;
   left: -100%;
-  transition: 1s;
   z-index: 1;
 }
 
 .nav-menu.active {
   left: 0;
-  transition: 500ms;
 }
 
 .nav-text-link {
