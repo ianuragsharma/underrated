@@ -1,6 +1,6 @@
 import "./videopage.css";
 import { useNavigate, useParams } from "react-router-dom";
-import { Navbar } from "../../components";
+import { Navbar, PlaylistModal } from "../../components";
 import { useAuth, useVideo } from "../../context";
 import { AiOutlineFire, AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { MdOutlineWatchLater, MdWatchLater } from "react-icons/md";
@@ -18,7 +18,7 @@ import {
 const VideoPage = () => {
   const { _id } = useParams();
   const navigate = useNavigate();
-  const { videoState, videoDispatch } = useVideo();
+  const { videoState, videoDispatch, playlistModal, toggleModal } = useVideo();
   const { liked, watchLater } = videoState;
   const { showToast } = useToast();
   const { user, encodedToken } = useAuth();
@@ -27,7 +27,6 @@ const VideoPage = () => {
   )[0];
   const { title, description, creator, views, dateUploaded, avatar } =
     currentVideo;
-
   const isLiked = isAlreadyIn(liked)(_id);
   const isInWatchlater = isAlreadyIn(watchLater)(_id);
 
@@ -66,9 +65,17 @@ const VideoPage = () => {
       navigate("/login");
     }
   };
+  const playlistHandler = () => {
+    if (user) toggleModal();
+    else {
+      showToast("error", "Login to add the video to your Watch later videos.");
+      navigate("/login");
+    }
+  };
   return (
     <div>
       <Navbar />
+      <PlaylistModal video={currentVideo} />
       <div className="continer">
         <iframe
           className="video-iframe"
@@ -104,7 +111,10 @@ const VideoPage = () => {
               />
             )}
 
-            <RiPlayListLine title="Save to playlist" />
+            <RiPlayListLine
+              title="Save to playlist"
+              onClick={playlistHandler}
+            />
           </div>
         </div>
         <div className="video-divider"></div>

@@ -20,6 +20,7 @@ import {
   removeFromLikedService,
 } from "../../services/likeServices";
 import { useToast } from "../../hooks";
+import { PlaylistModal } from "../";
 <BiTimeFive />;
 const ActionVideoCard = ({ video }) => {
   const {
@@ -72,6 +73,7 @@ const ActionVideoCard = ({ video }) => {
   };
   return (
     <div className="videoCard-container ">
+      <PlaylistModal video={video} />
       <Link to={`/watch/${_id}`} onClick={historyHandler}>
         <div className="videoImg-container">
           <img className="image-responsive video-img" src={tumbnailURL} />
@@ -106,8 +108,6 @@ const ActionVideoCard = ({ video }) => {
             onClick={watchLaterHandler}
           />
         )}
-
-        <RiPlayListLine title="Playlists" />
       </div>
     </div>
   );

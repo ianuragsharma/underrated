@@ -1,0 +1,45 @@
+.modal-continer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+}
+.modal-window {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 25vw;
+  padding: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.open {
+  display: block;
+}
+.modal-playlist > * {
+  margin: 5px 0;
+}
+
+.close-btn {
+  margin-left: auto;
+  color: var(--solid-black);
+  cursor: pointer;
+}
+.playlist-input {
+  border: 1px solid var(--dim-grey);
+  width: 90%;
+  margin: 0 auto;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+.playlist-btn {
+  padding: 4px 8px;
+  width: 90%;
+  margin: 0.5rem auto;
+}
