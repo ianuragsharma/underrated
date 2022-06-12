@@ -1,7 +1,9 @@
 import { ActionVideoCard, Navbar } from "../../components";
 import { useVideo } from "../../context";
+import { useDocumentTitle } from "../../hooks";
 
 const WatchLaterPage = () => {
+  useDocumentTitle("Watch Later");
   const { videoState, videoDispatch } = useVideo();
   const { watchLater } = videoState;
   const watchLaterList = watchLater.map((video) => (

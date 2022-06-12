@@ -4,8 +4,9 @@ import { authFrormReducer } from "../../reducers";
 import { signupService } from "../../services";
 import { useAuth } from "../../context";
 import { Navbar } from "../../components";
-import { useToast } from "../../hooks";
+import { useDocumentTitle, useToast } from "../../hooks";
 const SignupPage = () => {
+  useDocumentTitle("Signup");
   const [userState, userDispatch] = useReducer(authFrormReducer, {
     firstName: "",
     lastName: "",

@@ -2,7 +2,9 @@ import "./homepage.css";
 import { Link } from "react-router-dom";
 import { Category } from "../../components";
 import { useAuth, useVideo } from "../../context";
+import { useDocumentTitle } from "../../hooks";
 const HomePage = () => {
+  useDocumentTitle("Home");
   const { user } = useAuth();
   const { videoState, videoDispatch } = useVideo();
   return (

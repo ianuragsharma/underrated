@@ -3,10 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { loginService } from "../../services";
 import { Navbar } from "../../components";
 import { useAuth } from "../../context";
-import { useToast } from "../../hooks";
+import { useDocumentTitle, useToast } from "../../hooks";
 import "./authentication.css";
 
 const LoginPage = () => {
+  useDocumentTitle("Login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
