@@ -25,8 +25,8 @@ const LoginPage = () => {
     );
   };
   const guestLoginHandler = () => {
-    setEmail("adarshbalika@gmail.com");
-    setPassword("adarshBalika123");
+    setEmail("anuragsharma0711@gmail.com");
+    setPassword("anurag12");
   };
   return (
     <div>
