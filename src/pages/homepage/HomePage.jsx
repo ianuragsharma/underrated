@@ -9,11 +9,18 @@ const HomePage = () => {
     <div>
       <nav className="nav-container flex-row ">
         <Link to="/">
-          <h4 className="fw-500 text-xl m-4">Underrated</h4>
+          <div className="flex-row heading-container">
+            <h4 className="fw-500 text-xl ml-4">Underrated</h4>
+            <img
+              src="/favicon.png"
+              class="image-responsive logo-img ml-1"
+              alt=""
+            />
+          </div>
         </Link>
 
         <Link
-          className="text-xl ml-2  fw-300"
+          className="text-xl ml-6  fw-300"
           to="./explore"
           onClick={() =>
             videoDispatch({
