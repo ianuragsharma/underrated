@@ -9,13 +9,14 @@ import {
   addToLikedService,
   removeFromLikedService,
 } from "../../services/likeServices";
-import { useToast } from "../../hooks";
+import { useDocumentTitle, useToast } from "../../hooks";
 import { isAlreadyIn } from "../../utils";
 import {
   addToWatchLaterService,
   removeFromWatchLaterService,
 } from "../../services/watchLaterServices";
 const VideoPage = () => {
+  useDocumentTitle("Video");
   const { _id } = useParams();
   const navigate = useNavigate();
   const { videoState, videoDispatch, playlistModal, toggleModal } = useVideo();

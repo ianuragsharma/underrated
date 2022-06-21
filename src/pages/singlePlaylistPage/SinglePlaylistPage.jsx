@@ -2,8 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { ActionVideoCard, Navbar } from "../../components";
 import { useVideo } from "../../context";
+import { useDocumentTitle } from "../../hooks";
 
 const SinglePlaylistPage = () => {
+  useDocumentTitle("Video");
   const { playListId } = useParams();
   const { videoState } = useVideo();
   const { playlists } = videoState;

@@ -102,7 +102,13 @@
   height: 4.5rem;
   border-bottom: 1px solid var(--dim-grey);
 }
-
+.logo-img {
+  width: 1.7rem;
+}
+.heading-container {
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (max-width: 32em) {
   .hero-heading {
     font-size: 1.5rem;
