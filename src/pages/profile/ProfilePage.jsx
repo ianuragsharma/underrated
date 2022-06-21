@@ -2,8 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../components";
 import { useAuth } from "../../context";
+import { useDocumentTitle } from "../../hooks";
 
 const ProfilePage = () => {
+  useDocumentTitle("Playlist");
   const { setUser } = useAuth();
   const navigate = useNavigate();
   const logoutHandler = () => {

@@ -1,8 +1,10 @@
 import React from "react";
 import { Navbar, PlaylistCard } from "../../components";
 import { useVideo } from "../../context";
+import { useDocumentTitle } from "../../hooks";
 
 const PlaylistPage = () => {
+  useDocumentTitle("Playlists");
   const { videoState, videoDispatch } = useVideo();
   const { playlists } = videoState;
   const allPlaylist = playlists.map((playlist) => (

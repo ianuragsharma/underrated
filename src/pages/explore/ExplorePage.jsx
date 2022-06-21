@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { CategoryChips, Navbar, VideoCard } from "../../components";
 import { useVideo } from "../../context";
+import { useDocumentTitle } from "../../hooks";
 import "./explore.css";
 const ExplorePage = () => {
+  useDocumentTitle("Explore");
   const { videoState } = useVideo();
   const { videos } = videoState;
   const [filteredVideos, setFilteredVideos] = useState([]);

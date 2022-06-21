@@ -1,9 +1,10 @@
-import { useToast } from "../../hooks";
+import { useDocumentTitle, useToast } from "../../hooks";
 import { ActionVideoCard, Navbar } from "../../components";
 import { useAuth, useVideo } from "../../context";
 import "./history.css";
 import { clearHistoryService } from "../../services/historyServices";
 const HistoryPage = () => {
+  useDocumentTitle("History");
   const { videoState, videoDispatch } = useVideo();
   const { history } = videoState;
   const { encodedToken } = useAuth();
