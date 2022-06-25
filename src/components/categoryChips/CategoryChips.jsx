@@ -4,7 +4,6 @@ import { useVideo } from "../../context";
 const CategoryChips = () => {
   const { videoState, videoDispatch } = useVideo();
   const { categories, selectedCategory } = videoState;
-  console.log(selectedCategory);
   const categoryHandler = (item) => {
     videoDispatch({
       type: "SET_SELECTED_CATEGORY",
