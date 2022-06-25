@@ -2,11 +2,15 @@
   margin-top: 1rem;
   position: relative;
   width: 20rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .category-img {
   opacity: 0.8;
   border-radius: 10px;
+}
+.category-item:hover {
+  transform: scale(1.1);
 }
 @media screen and (max-width: 32em) {
   .category-item {
