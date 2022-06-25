@@ -15,6 +15,8 @@ import {
   addToWatchLaterService,
   removeFromWatchLaterService,
 } from "../../services/watchLaterServices";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const VideoPage = () => {
   useDocumentTitle("Video");
   const { _id } = useParams();
@@ -23,9 +25,21 @@ const VideoPage = () => {
   const { liked, watchLater } = videoState;
   const { showToast } = useToast();
   const { user, encodedToken } = useAuth();
-  const currentVideo = videoState.videos.filter(
-    (video) => video._id === _id
-  )[0];
+
+  const [currentVideo, setCurrentVideo] = useState([]);
+  useEffect(() => {
+    (async () => {
+      try {
+        const {
+          data: { video },
+        } = await axios.get(`/api/video/${_id}`);
+
+        setCurrentVideo(video);
+      } catch (error) {
+        showToast("error", "Could not load the video, try again later!");
+      }
+    })();
+  }, [_id, showToast]);
   const { title, description, creator, views, dateUploaded, avatar } =
     currentVideo;
   const isLiked = isAlreadyIn(liked)(_id);
