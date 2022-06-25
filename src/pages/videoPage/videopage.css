@@ -22,3 +22,9 @@
 .video-discription {
   color: var(--solid-black);
 }
+
+@media only screen and (max-width: 756px) {
+  .video-iframe {
+    height: 50%;
+  }
+}
