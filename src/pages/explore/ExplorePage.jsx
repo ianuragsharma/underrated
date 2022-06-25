@@ -7,7 +7,7 @@ const ExplorePage = () => {
   useDocumentTitle("Explore");
   const { videoState } = useVideo();
   const { videos } = videoState;
-  const [filteredVideos, setFilteredVideos] = useState([]);
+  const [filteredVideos, setFilteredVideos] = useState(videos);
   useEffect(() => {
     if (videoState.selectedCategory !== "All") {
       const filterrr = videos.filter(
@@ -17,7 +17,7 @@ const ExplorePage = () => {
     } else {
       setFilteredVideos(videos);
     }
-  }, [videoState.selectedCategory]);
+  }, [videoState.selectedCategory, videos]);
   const videoList = filteredVideos.map((video) => (
     <div key={video._id}>
       <VideoCard video={video} />
