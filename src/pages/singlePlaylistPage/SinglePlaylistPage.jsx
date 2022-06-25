@@ -12,11 +12,15 @@ const SinglePlaylistPage = () => {
   const currentPlaylist = playlists.filter(
     (playlist) => playListId === playlist._id
   );
+  console.log(currentPlaylist);
   const allVideos = currentPlaylist[0].videos;
   return (
     <div>
       <Navbar />
       <div className="continer">
+        <h5 className="text-center fw-500 my-7">
+          {currentPlaylist[0].title} ({currentPlaylist.length})
+        </h5>
         {allVideos.length > 0 ? (
           <div className="flex-row  ml-1 videos-container">
             {allVideos.map((video) => (
