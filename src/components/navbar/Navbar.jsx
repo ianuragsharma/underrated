@@ -29,7 +29,13 @@ function Navbar() {
           <FaBars size={28} onClick={showSidebar} />
         </Link>
         <Link to="/">
-          <h4 className="fw-500 text-xl ml-2">Underrated</h4>
+          <div className="flex-row">
+            <img
+              src="/favicon.png"
+              class="image-responsive logo-img ml-1"
+              alt=""
+            />
+          </div>
         </Link>
         <ul className="flex-row">
           {user ? (
@@ -55,7 +61,14 @@ function Navbar() {
               <FaBars size={28} onClick={showSidebar} />
             </Link>
             <Link to="/">
-              <h4 className="fw-500 text-xl ml-2">Underrated</h4>
+              <div className="flex-row">
+                <h4 className="fw-500 text-xl ml-2">Underrated</h4>
+                <img
+                  src="/favicon.png"
+                  class="image-responsive logo-img ml-5"
+                  alt=""
+                />
+              </div>
             </Link>
           </li>
           <div className="pt-1 sidebar-container">
