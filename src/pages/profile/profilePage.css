@@ -1,0 +1,10 @@
+.profile-conatiner {
+  height: 100%;
+}
+.profile-info {
+  width: 100%;
+  max-width: 30rem;
+  align-self: center;
+  border: 1px solid var(--dim-grey);
+  border-radius: 5px;
+}
