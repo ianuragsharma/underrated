@@ -17,12 +17,14 @@ const HistoryPage = () => {
     <div>
       <Navbar />
       <div className="continer ">
+        <h5 className="text-center fw-500 ">History ({history.length})</h5>
         <button
           className="btn btn-solid-primary text-base text-white my-2 "
           onClick={clearHistoryHandler}
         >
           Clear history
         </button>
+
         <div className="flex-row  ml-1 videos-container"> {historyList}</div>
       </div>
     </div>
