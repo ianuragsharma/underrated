@@ -17,7 +17,7 @@ export const videos = [
     dateUploaded: "2 years ago",
     runTime: "2:49",
     alt: "song",
-    tumbnailURL: "https://img.youtube.com/vi/fWBBjAeIZms/maxresdefault.jpg",
+    thumbnailURL: "https://img.youtube.com/vi/fWBBjAeIZms/maxresdefault.jpg",
     avatar:
       "https://yt3.ggpht.com/OxFeKZ3gLeAASmR7uiv39-LTA8ShglraaYIGXscVNA03klS1RGesTtyp3IbwFv6gGmxhwoXc=s176-c-k-c0x00ffffff-no-rj",
     category: "Indie Songs",
@@ -32,9 +32,9 @@ export const videos = [
     dateUploaded: "3 Years ago",
     runTime: "3:55",
     alt: "song",
-    tumbnailURL: "https://img.youtube.com/vi/UfvQjcu0c48/maxresdefault.jpg",
+    thumbnailURL: "https://img.youtube.com/vi/UfvQjcu0c48/maxresdefault.jpg",
     avatar:
-      "https://yt3.ggpht.com/nVdRF87ZA8-16G8okx6zPGR8IGOm0NfQiij7IrkidsRScvHTW8Wf4hYSsKVg0C_lbBHSJNtV=s176-c-k-c0x00ffffff-no-rj",
+      "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/videoLibrary/channelThumbnail/umer.jpg",
     category: "Indie Songs",
   },
   {
@@ -47,7 +47,7 @@ export const videos = [
     dateUploaded: "10 year ago",
     runTime: "3:29",
     alt: "song",
-    tumbnailURL: "https://img.youtube.com/vi/WL-3zvnUomk/maxresdefault.jpg",
+    thumbnailURL: "https://img.youtube.com/vi/WL-3zvnUomk/maxresdefault.jpg",
     avatar:
       "https://yt3.ggpht.com/ytc/AKedOLRRnYQvFT7xYnEOtOhnEcDyheW8R5n6nTvRN3Nrvg=s900-c-k-c0x00ffffff-no-rj",
     category: "Hip-Hop",
@@ -63,9 +63,9 @@ export const videos = [
     dateUploaded: "10 year ago",
     runTime: "2:03",
     alt: "song",
-    tumbnailURL: "https://img.youtube.com/vi/nDHFCZBM-lM/maxresdefault.jpg",
+    thumbnailURL: "https://img.youtube.com/vi/nDHFCZBM-lM/maxresdefault.jpg",
     avatar:
-      "https://yt3.ggpht.com/DzaZaTX6gdgjjPI_vkNc2dPbI794UroI9fTAunua0fa7lukDj5NDkjfhS5-w2KXuvXS02r92=s900-c-k-c0x00ffffff-no-rj",
+      "https://raw.githubusercontent.com/ianuragsharma/hostedIMG/main/videoLibrary/channelThumbnail/tseries.jpg",
     category: "Bollywood",
   },
   {
@@ -78,7 +78,7 @@ export const videos = [
     dateUploaded: "1 year ago",
     runTime: "4:17",
     alt: "song",
-    tumbnailURL: "https://img.youtube.com/vi/1sLB79ElB40/maxresdefault.jpg",
+    thumbnailURL: "https://img.youtube.com/vi/1sLB79ElB40/maxresdefault.jpg",
     avatar:
       "https://yt3.ggpht.com/ytc/AKedOLTstlj_L30bwLQ6A7NwCeYZdRtOJqP0Cu7MBP3M1Q=s900-c-k-c0x00ffffff-no-rj",
     category: "Indie Songs",
@@ -93,7 +93,7 @@ export const videos = [
     dateUploaded: "1 year ago",
     runTime: "1:15",
     alt: "song",
-    tumbnailURL: "https://img.youtube.com/vi/klZarL9tk9c/maxresdefault.jpg",
+    thumbnailURL: "https://img.youtube.com/vi/klZarL9tk9c/maxresdefault.jpg",
     avatar:
       "https://yt3.ggpht.com/ytc/AKedOLSgEOY2JmxgUDnUxkmNYl4oehi2y0_51GJR_ZhC3g=s176-c-k-c0x00ffffff-no-rj",
     category: "Pop",
@@ -108,7 +108,7 @@ export const videos = [
     dateUploaded: "2 year ago",
     runTime: "2:57",
     alt: "song",
-    tumbnailURL: "https://img.youtube.com/vi/Oge-Eaik0qY/maxresdefault.jpg",
+    thumbnailURL: "https://img.youtube.com/vi/Oge-Eaik0qY/maxresdefault.jpg",
     avatar:
       "https://yt3.ggpht.com/ytc/AKedOLTi6sxEpGZEQBWkZnEWKi2KQYMRrJewPI9KRA6onSA=s176-c-k-c0x00ffffff-no-rj",
     category: "Indie Songs",
@@ -123,7 +123,7 @@ export const videos = [
     dateUploaded: "2 year ago",
     runTime: "4:54",
     alt: "song",
-    tumbnailURL: "https://img.youtube.com/vi/cqD2NWJuJO0/maxresdefault.jpg",
+    thumbnailURL: "https://img.youtube.com/vi/cqD2NWJuJO0/maxresdefault.jpg",
     avatar:
       "https://yt3.ggpht.com/ytc/AKedOLQTTRj9JMWUDVQKTAjseeT3bNlOv2pr0RNHOvgS8Q=s176-c-k-c0x00ffffff-no-rj",
     category: "Pop",
@@ -139,7 +139,7 @@ export const videos = [
     dateUploaded: "2 years ago",
     runTime: "2:37",
     alt: "song",
-    tumbnailURL: "https://img.youtube.com/vi/snXlkWuaOvI/maxresdefault.jpg",
+    thumbnailURL: "https://img.youtube.com/vi/snXlkWuaOvI/maxresdefault.jpg",
     avatar:
       "https://yt3.ggpht.com/xoaD3J3hwdxNXrfE_Vv42F6lrKJ7BR3Si2aBfIdwaINxg8gIuk5mvEJ3-zuVQ4E7xCMY6OIKiw=s176-c-k-c0x00ffffff-no-rj",
     category: "Indie Songs",
