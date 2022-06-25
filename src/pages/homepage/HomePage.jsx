@@ -80,7 +80,7 @@ const HomePage = () => {
       </section>
 
       <section className="container">
-        <h4 className="flex-row section-heading fw-400">Browse Category</h4>
+        <h4 className="flex-row section-heading fw-400">Browse by genre</h4>
         <Link to="/explore" className="product-list flex-row">
           <Category />
         </Link>
