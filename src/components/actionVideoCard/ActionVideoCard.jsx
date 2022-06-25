@@ -32,7 +32,7 @@ const ActionVideoCard = ({ video }) => {
     dateUploaded,
     runTime,
     alt,
-    tumbnailURL,
+    thumbnailURL,
     avatar,
     category,
   } = video;
@@ -76,7 +76,7 @@ const ActionVideoCard = ({ video }) => {
       <PlaylistModal video={video} />
       <Link to={`/watch/${_id}`} onClick={historyHandler}>
         <div className="videoImg-container">
-          <img className="image-responsive video-img" src={tumbnailURL} />
+          <img className="image-responsive video-img" src={thumbnailURL} />
           <img
             alt="profile-picture"
             className="avatar avatar-sm"
