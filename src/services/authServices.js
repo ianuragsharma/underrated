@@ -6,7 +6,8 @@ const loginService = async (
   setUser,
   navigate,
   setEncodedToken,
-  showToast
+  showToast,
+  location
 ) => {
   try {
     const { data } = await axios.post("/api/auth/login", {
@@ -16,7 +17,7 @@ const loginService = async (
     setUser(data.foundUser);
     localStorage.setItem("token", data.encodedToken);
     setEncodedToken(data.encodedToken);
-    navigate("/");
+    navigate(location.state?.from?.pathname ?? "/", { replace: true });
     showToast(
       "success",
       `Welcome back ${data.foundUser.firstName} ${data.foundUser.lastName}`
@@ -34,7 +35,8 @@ const signupService = async (
   setUser,
   navigate,
   showToast,
-  setEncodedToken
+  setEncodedToken,
+  location
 ) => {
   try {
     const { data } = await axios.post("/api/auth/signup", {
@@ -46,7 +48,7 @@ const signupService = async (
     setUser(data.createdUser);
     localStorage.setItem("token", data.encodedToken);
     setEncodedToken(data.encodedToken);
-    navigate("/");
+    navigate(location.state?.from?.pathname ?? "/", { replace: true });
     showToast(
       "success",
       `Welcome to ezBuy ${data.createdUser.firstName} ${data.createdUser.lastName}`

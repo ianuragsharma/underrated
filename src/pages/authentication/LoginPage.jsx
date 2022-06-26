@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loginService } from "../../services";
 import { Navbar } from "../../components";
 import { useAuth } from "../../context";
@@ -11,6 +11,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
   const { setUser, setEncodedToken } = useAuth();
   const { showToast } = useToast();
   const loginHandler = (e) => {
@@ -21,7 +22,8 @@ const LoginPage = () => {
       setUser,
       navigate,
       setEncodedToken,
-      showToast
+      showToast,
+      location
     );
   };
   const guestLoginHandler = () => {

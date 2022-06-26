@@ -1,5 +1,5 @@
 import "./videopage.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Navbar, PlaylistModal } from "../../components";
 import { useAuth, useVideo } from "../../context";
 import { AiOutlineFire, AiOutlineLike, AiFillLike } from "react-icons/ai";
@@ -21,11 +21,11 @@ const VideoPage = () => {
   useDocumentTitle("Video");
   const { _id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const { videoState, videoDispatch, playlistModal, toggleModal } = useVideo();
   const { liked, watchLater } = videoState;
   const { showToast } = useToast();
   const { user, encodedToken } = useAuth();
-
   const [currentVideo, setCurrentVideo] = useState([]);
   useEffect(() => {
     (async () => {
@@ -57,7 +57,7 @@ const VideoPage = () => {
           );
     } else {
       showToast("error", "Login to add the video to your liked videos.");
-      navigate("/login");
+      navigate("/login", { state: { from: location }, replace: true });
     }
   };
   const watchLaterHandler = () => {
@@ -77,14 +77,14 @@ const VideoPage = () => {
           );
     } else {
       showToast("error", "Login to add the video to your Watch later videos.");
-      navigate("/login");
+      navigate("/login", { state: { from: location }, replace: true });
     }
   };
   const playlistHandler = () => {
     if (user) toggleModal();
     else {
       showToast("error", "Login to add the video to your Playlist.");
-      navigate("/login");
+      navigate("/login", { state: { from: location }, replace: true });
     }
   };
   return (
