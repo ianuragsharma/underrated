@@ -11,7 +11,7 @@ const ProfilePage = () => {
   const navigate = useNavigate();
   const logoutHandler = () => {
     setUser(null);
-    localStorage.removeItem("token");
+    localStorage.clear();
     navigate("/");
   };
   return (

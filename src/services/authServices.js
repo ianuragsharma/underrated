@@ -15,6 +15,11 @@ const loginService = async (
       password,
     });
     setUser(data.foundUser);
+    const { email: userEmail, firstName, lastName } = data.foundUser;
+    localStorage.setItem(
+      "underrated-user",
+      JSON.stringify({ email: userEmail, firstName, lastName })
+    );
     localStorage.setItem("token", data.encodedToken);
     setEncodedToken(data.encodedToken);
     navigate(location.state?.from?.pathname ?? "/", { replace: true });
@@ -46,12 +51,25 @@ const signupService = async (
       password,
     });
     setUser(data.createdUser);
+    const {
+      email: userEmail,
+      firstName: userFirstName,
+      lastName: userLastName,
+    } = data.createdUser;
     localStorage.setItem("token", data.encodedToken);
+    localStorage.setItem(
+      "underrated-user",
+      JSON.stringify({
+        email: userEmail,
+        firstName: userFirstName,
+        lastName: userLastName,
+      })
+    );
     setEncodedToken(data.encodedToken);
     navigate(location.state?.from?.pathname ?? "/", { replace: true });
     showToast(
       "success",
-      `Welcome to ezBuy ${data.createdUser.firstName} ${data.createdUser.lastName}`
+      `Welcome to Underrated ${data.createdUser.firstName} ${data.createdUser.lastName}`
     );
   } catch (error) {
     error.response.status === 422
