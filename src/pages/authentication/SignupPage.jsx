@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useReducer } from "react";
 import { authFrormReducer } from "../../reducers";
 import { signupService } from "../../services";
@@ -16,6 +16,7 @@ const SignupPage = () => {
   });
 
   const navigate = useNavigate();
+  const location = useLocation();
   const { email, firstName, lastName, password, confirmPassword } = userState;
   const { setUser, setEncodedToken } = useAuth();
   const [formError, setFormError] = useState(false);
@@ -32,7 +33,8 @@ const SignupPage = () => {
         setUser,
         navigate,
         showToast,
-        setEncodedToken
+        setEncodedToken,
+        location
       );
     } else {
       setFormError(true);
@@ -138,12 +140,12 @@ const SignupPage = () => {
                 value="term-condition"
                 required
               />
-              <label htmlFor="term-condition">
+              <label htmlFor="term-condition" className="ml-1">
                 I accept all term and condition
               </label>
             </span>
           </div>
-          <button className="btn btn-solid-primary text-base text-white">
+          <button className="btn btn-solid-primary text-base text-white py-1">
             Create New Account
           </button>
           <button className="link-btn text-base ">
