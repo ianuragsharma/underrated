@@ -62,11 +62,11 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button className="btn btn-solid-primary text-base text-white">
+          <button className="btn btn-solid-primary text-base text-white py-1">
             Login
           </button>
           <button
-            className="btn btn-outlined-secondary text-base"
+            className="btn btn-outlined-secondary text-base py-1"
             onClick={guestLoginHandler}
           >
             Login as guest user
