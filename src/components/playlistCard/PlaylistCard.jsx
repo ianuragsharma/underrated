@@ -13,7 +13,6 @@ const PlaylistCard = ({ playlist }) => {
   const deletePlaylistHandler = () => {
     removePlaylistService(playlist._id, videoDispatch, encodedToken, showToast);
   };
-  console.log(playlist.videos.length);
   return (
     <div>
       <div className="videoCard-container">
