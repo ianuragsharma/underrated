@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loginService } from "../../services";
 import { Navbar } from "../../components";
@@ -12,7 +12,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  const { setUser, setEncodedToken } = useAuth();
+  const { user, setUser, setEncodedToken } = useAuth();
   const { showToast } = useToast();
   const loginHandler = (e) => {
     e.preventDefault();
@@ -30,6 +30,12 @@ const LoginPage = () => {
     setEmail("anuragsharma0711@gmail.com");
     setPassword("anurag12");
   };
+  useEffect(() => {
+    if (user) {
+      navigate(location.state?.from?.pathname ?? "/", { replace: true });
+    }
+  }, [user]);
+
   return (
     <div>
       <Navbar />
