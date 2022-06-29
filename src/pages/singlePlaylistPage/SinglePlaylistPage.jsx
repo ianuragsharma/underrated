@@ -12,7 +12,6 @@ const SinglePlaylistPage = () => {
   const currentPlaylist = playlists.filter(
     (playlist) => playListId === playlist._id
   );
-  console.log(currentPlaylist);
   const allVideos = currentPlaylist[0].videos;
   return (
     <div>

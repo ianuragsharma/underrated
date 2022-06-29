@@ -13,7 +13,6 @@ const AuthProvider = ({ children }) => {
       setUser(JSON.parse(localStorage.getItem("underrated-user")));
     }
   }, []);
-  console.log(user);
   return (
     <AuthContext.Provider
       value={{ user, setUser, encodedToken, setEncodedToken }}

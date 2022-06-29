@@ -7,7 +7,6 @@ const LikedVideosPage = () => {
   const { videoState, videoDispatch } = useVideo();
   const { liked } = videoState;
   const likedList = liked.map((video) => <ActionVideoCard video={video} />);
-  console.log(liked.length);
   return (
     <div>
       <Navbar />
