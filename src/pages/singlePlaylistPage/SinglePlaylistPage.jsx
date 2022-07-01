@@ -18,7 +18,7 @@ const SinglePlaylistPage = () => {
       <Navbar />
       <div className="continer">
         <h5 className="text-center fw-500 my-7">
-          {currentPlaylist[0].title} ({currentPlaylist.length})
+          {currentPlaylist[0].title} ({currentPlaylist[0].videos.length})
         </h5>
         {allVideos.length > 0 ? (
           <div className="flex-row  ml-1 videos-container">
